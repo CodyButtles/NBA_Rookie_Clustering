@@ -13,7 +13,16 @@ The steps I took to complete this project included web scraping multiple pages o
 
 Once I had all the data put together I kept rookies that played more then 9 games in their rookie season and then rookies that played more than 90 total minutes. This dataset is the Kept_Rookies csv that is in this repository. At this point I have 45 columns that represent different statistics for each players performance and then 4 columns describing the player which includes their name, team, age, and position.
 
+My next step would be to attempt to create clusters that will group players together based on their statistical performance, but there is a problem. Trying to use 45 columns to evaluate groups of players gives us 45 different dimensions. If you imagine a 2d line graph there are just 2 dimensions, the x and y axis. Now imagine 45 dimensions, this makes it hard to give us clusters.
 
+So to fix this problem I reduced the amount of columns I want to use to evaluate players down to 16 specific columns. I then used a method called principal component analysis to reduce those 16 columns even further down to 5 columns. These 5 columns represent a "score" based on several other columns. 
+
+PCA_Off | PCA_Def | PCA_Use | PCA_Eff | PCA_Reb
+----- | ---------------- | ---- | ------ | ------
+Assists Per 36 min | Steals per 36 min | Average Min per game | Value Over Replacement Player | Offensive Rebounds per 36 min
+Points per 36 min | Blocks per 36 min | Usage % | Player Efficiency Rating | Defensive Rebounds per 36 min
+Offensive Win Shares | Defensive Win Shares | | True Shooting % | Total Rebounds per 36 min
+Offensive Box Plus Minus | Defensive Box Plus Minus | | |
 
 
 
